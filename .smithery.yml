@@ -1,0 +1,11 @@
+# Smithery configuration
+enabled: true
+
+servers:
+  cryptosignal:
+    description: Cryptocurrency Market Signal Analysis
+    install: pip install .
+
+  china-intel:
+    description: Chinese Market Intelligence
+    install: pip install .
