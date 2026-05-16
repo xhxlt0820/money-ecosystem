@@ -1,0 +1,48 @@
+# x402 微支付收款配置
+# 所有收入自动收到主人的加密钱包
+
+收款地址:
+  usdc_base: "0x1a1d74e0cf80757784e30a9e8ce15d78033c4426"
+  usdc_eth: "PLACEHOLDER主人提供后填入"
+
+x402 配置:
+  protocol: x402
+  network: base  # 或 ethereum
+  token: USDC
+  
+  # MCP Server 定价 (按调用收费)
+  pricing:
+    chinese_news_server:
+      price_per_call: 0.001  # $0.001/次 (USDC on Base)
+      endpoint: /mcp/tools/call
+      server_port: 8788
+      
+    crypto_chain_server:
+      price_per_call: 0.005  # $0.005/次 (USDC on Base)
+      endpoint: /mcp/tools/call
+      server_port: 8789
+      
+    public_data_server:
+      price_per_call: 0.002  # $0.002/次 (USDC on Base)
+      endpoint: /mcp/tools/call
+      server_port: 8790
+
+技能市场定价:
+  crypto_market_analysis:
+    monthly_subscription: 19  # $19/月
+    tier: basic
+    
+  crypto_alert_monitor:
+    monthly_subscription: 49  # $49/月
+    tier: premium
+    
+  data_analysis_tool:
+    monthly_subscription: 29  # $29/月
+    tier: pro
+    
+收入追踪:
+  wallet_address: "0x1a1d74e0cf80757784e30a9e8ce15d78033c4426"
+  check_interval: 3600  # 每小时检查一次
+  notification_channels:
+    - telegram
+    - discord
