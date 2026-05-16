@@ -3,7 +3,7 @@
 ## 已完成 ✅
 - [x] 3 个 MCP Server 开发完成
 - [x] 2 个 Skills 开发完成
-- [x] x402 收款配置完成 (USDC on Base: `0x1a1d74e0cf80757784e30a9e8ce15d78033c4426`)
+- [x] x402 收款配置完成 (USDC on Base: `暂不公开（x402协议内部配置）`)
 - [x] 所有数据源沙箱验证通过
 - [x] Git 仓库初始化
 
