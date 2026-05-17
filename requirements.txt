@@ -1,7 +1,30 @@
-mcp>=0.1.0
-fastapi>=0.100.0
-uvicorn>=0.23.0
+# Money Ecosystem - 依赖清单
+
+# Core MCP Server
+fastmcp>=0.1.0
+
+# Data Sources
 requests>=2.31.0
-websockets>=11.0
+
+# Analysis
+numpy>=1.24.0
+pandas>=2.0.0
+
+# Security
+cryptography>=41.0.0
+
+# Async (for WebSocket support)
 aiohttp>=3.8.0
-pydantic>=2.0.0
+websockets>=11.0.0
+
+# Monitoring
+prometheus-client>=0.17.0
+
+# Testing
+pytest>=7.4.0
+pytest-asyncio>=0.21.0
+
+# Development
+black>=23.0.0
+flake8>=6.0.0
+mypy>=1.4.0
