@@ -24,6 +24,8 @@ License: MIT
 """
 
 import os
+import logging
+import functools
 import json
 import subprocess
 import time
@@ -284,6 +286,38 @@ def get_crypto_market_summary() -> dict:
             pass
 
     return result
+
+# ============================================================
+# Retry Mechanism
+# ============================================================
+
+def retry(max_attempts=3, delay=1.0, backoff=2.0):
+    def decorator(func):
+        @functools.wraps(func)
+        def wrapper(*args, **kwargs):
+            last_exception = None
+            current_delay = delay
+            for attempt in range(1, max_attempts + 1):
+                try:
+                    return func(*args, **kwargs)
+                except Exception as e:
+                    last_exception = e
+                    if attempt < max_attempts:
+                        time.sleep(current_delay)
+                        current_delay *= backoff
+                    else:
+                        logging.warning(f"{func.__name__} retried {max_attempts} times, failed: {e}")
+            raise last_exception
+        return wrapper
+    return decorator
+
+# Setup logger
+logging.basicConfig(
+    level=logging.INFO,
+    format="%(asctime)s [%(levelname)s] %(name)s - %(message)s",
+    datefmt="%Y-%m-%d %H:%M:%S",
+)
+logger = logging.getLogger("china-intel")
 
 
 # ============================================================================
