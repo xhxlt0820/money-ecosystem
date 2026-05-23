@@ -61,6 +61,14 @@
 └─────────────────────────────────────────────────────────┘
 ```
 
+## 🧩 生态工具
+
+### [prompt-optimizer](https://github.com/xhxlt0820/prompt-optimizer)
+AI Prompt质量分析器与优化工具 - CLI工具，帮助提升AI使用效果
+
+### [ai-earner-store](https://github.com/xhxlt0820/ai-earner-store)
+AI Prompt商店 - 高质量提示词产品合集
+
 ## 📚 功能模块
 
 ### 🚀 v5.0 — CryptoSignal 加密货币信号分析引擎
